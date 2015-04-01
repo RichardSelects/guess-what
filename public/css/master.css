@@ -1,0 +1,146 @@
+/***********************************************\
+* LOADING/LOGIN
+\***********************************************/
+* {
+	font-size: 1em;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+#login-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #62D059;
+}
+
+#spinner {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	background-color: #FFFFFF;
+	margin: auto;
+	top: 25%;
+	-webkit-animation: rotateplane 1.2s infinite ease-in-out;
+	animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+	0% { -webkit-transform: perspective(120px) }
+	50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+	100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+	0% { 
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+	}
+	50% { 
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+		-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+	}
+	100% { 
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+		-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+	}
+}
+
+#login-form {
+	display: none;
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	padding: 0 10%;
+}
+
+#login-form input {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 4%;
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.9);
+	border-radius: 4px;
+	font-size: 1.4em;
+}
+
+/***********************************************\
+* GAME BOARD
+\***********************************************/
+#game-board {
+	position: relative;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.row {
+	display: block;
+}
+
+.face {
+	position: relative;
+	display: inline-block;
+	height: 280px;
+	width: 200px;
+	background: url('../img/standard.jpg') top left no-repeat;
+}
+
+#sam { background-position: 0px 0px; }
+#joe { background-position: -200px 0px; }
+#paul { background-position: -400px 0px; }
+#george { background-position: -600px 0px; }
+#phillip { background-position: -800px 0px; }
+#claire { background-position: -1000px 0px; }
+#anita { background-position: -1200px 0px; }
+#alfred { background-position: -1400px 0px; }
+
+#frans { background-position: 0px -280px; }
+#richard { background-position: -200px -280px; }
+#susan { background-position: -400px -280px; }
+#max { background-position: -600px -280px; }
+#herman { background-position: -800px -280px; }
+#david { background-position: -1000px -280px; }
+#bernard { background-position: -1200px -280px; }
+#alex { background-position: -1400px -280px; }
+
+#thomas { background-position: 0px -560px; }
+#robert { background-position: -200px -560px; }
+#peter { background-position: -400px -560px; }
+#marie { background-position: -600px -560px; }
+#bill { background-position: -800px -560px; }
+#eric { background-position: -1000px -560px; }
+#carl { background-position: -1200px -560px; }
+#anna { background-position: -1400px -560px; }
+
+#input {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 20px 10px;
+	background: #62D059;
+	text-align: center;
+}
+
+#question {
+	width: 80%;
+	padding: 5px;
+	font-size: 1.2em;
+}
+
+#input button {
+	width: 5%;
+	margin-left: 1%;
+	font-size: 1.2em;
+}
+
+button.disabled {
+	opacity: 0.25;
+	cursor: disabled;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Guess What?</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./public/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+</head>
+	<body>
+		
+		<div id="game-board">
+			<div class="row">
+				<div class="face" id="sam"></div>
+				<div class="face" id="joe"></div>
+				<div class="face" id="paul"></div>
+				<div class="face" id="george"></div>
+				<div class="face" id="phillip"></div>
+				<div class="face" id="claire"></div>
+				<div class="face" id="anita"></div>
+				<div class="face" id="alfred"></div>
+			</div>
+
+			<div class="row">
+				<div class="face" id="frans"></div>
+				<div class="face" id="richard"></div>
+				<div class="face" id="susan"></div>
+				<div class="face" id="max"></div>
+				<div class="face" id="herman"></div>
+				<div class="face" id="david"></div>
+				<div class="face" id="bernard"></div>
+				<div class="face" id="alex"></div>
+			</div>
+
+			<div class="row">
+				<div class="face" id="thomas"></div>
+				<div class="face" id="robert"></div>
+				<div class="face" id="peter"></div>
+				<div class="face" id="marie"></div>
+				<div class="face" id="bill"></div>
+				<div class="face" id="eric"></div>
+				<div class="face" id="carl"></div>
+				<div class="face" id="anna"></div>
+			</div>
+
+		</div>
+
+		<form id="input">
+
+			<input type="text" name="question" id="question">
+			<button type="submit" id="send">Send</button>
+			<button id="yes">Yes</button>
+			<button id="no">No</button>
+
+		</form>
+
+		<div id="login-screen">
+			<div id="spinner"></div>
+
+			<form action="" id="login-form">
+				<input type="text" name="username" id="username" placeholder="username">
+				<input type="password" name="password" id="password" placeholder="password">
+			</form>
+		</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		var socket = io();
+
+		$("#input").on("submit", function(e) {
+			e.preventDefault();
+			var question = $("#question").val();
+			socket.emit("send question", question);
+		});
+
+		socket.on("send question", function(question) {
+			console.log(question);
+		});
+
+
+		if (false) {
+			var $spinner = $("#spinner"),
+				$form = $("#login-form");
+			setTimeout(function() {
+				$spinner.animate({ opacity: 0, top: "-=20px" }, 1000, function() {
+					$spinner.remove();
+					$form.fadeIn("slow");
+				});
+			}, 2000);
+		} else {
+			$("#login-screen").remove();
+		}
+	</script>
+
+	</body>
+</html>

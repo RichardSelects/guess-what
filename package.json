@@ -1,0 +1,9 @@
+{
+  "name": "guess-what",
+  "version": "0.0.1",
+  "description": "blatant guess who knockoff",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.3.5"
+  }
+}
