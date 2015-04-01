@@ -78,6 +78,7 @@
 		});
 
 		socket.on("send question", function(question) {
+			$("#question").val(question);
 			console.log(question);
 		});
 

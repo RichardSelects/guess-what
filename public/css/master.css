@@ -2,6 +2,8 @@
 * LOADING/LOGIN
 \***********************************************/
 * {
+	margin: 0;
+	padding: 0;
 	font-size: 1em;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -72,50 +74,61 @@
 * GAME BOARD
 \***********************************************/
 #game-board {
-	position: relative;
-	width: 100%;
-	margin: auto;
+	position: absolute;
+	height: calc(100% - 5em);
+	width: 140vh;
+	margin: 0 calc(50vw - 70vh);
 	text-align: center;
 }
 
 .row {
 	display: block;
+	height: 33%;
+	width: 100%;
 }
 
 .face {
+	float: left;
 	position: relative;
 	display: inline-block;
-	height: 280px;
-	width: 200px;
+	height: calc(100% - 20px);
+	width: calc(12.5% - 20px);
+	margin: 10px;
 	background: url('../img/standard.jpg') top left no-repeat;
+	background-size: 800% 300%;
+	cursor: pointer;
 }
 
-#sam { background-position: 0px 0px; }
-#joe { background-position: -200px 0px; }
-#paul { background-position: -400px 0px; }
-#george { background-position: -600px 0px; }
-#phillip { background-position: -800px 0px; }
-#claire { background-position: -1000px 0px; }
-#anita { background-position: -1200px 0px; }
-#alfred { background-position: -1400px 0px; }
+.face:hover {
+	box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
 
-#frans { background-position: 0px -280px; }
-#richard { background-position: -200px -280px; }
-#susan { background-position: -400px -280px; }
-#max { background-position: -600px -280px; }
-#herman { background-position: -800px -280px; }
-#david { background-position: -1000px -280px; }
-#bernard { background-position: -1200px -280px; }
-#alex { background-position: -1400px -280px; }
+#sam { background-position: 0 0; }
+#joe { background-position: 14.286% 0%; }
+#paul { background-position: 28.571% 0px; }
+#george { background-position: 42.857% 0px; }
+#phillip { background-position: 57.143% 0px; }
+#claire { background-position: 71.428% 0px; }
+#anita { background-position: 85.714% 0px; }
+#alfred { background-position: 100% 0px; }
 
-#thomas { background-position: 0px -560px; }
-#robert { background-position: -200px -560px; }
-#peter { background-position: -400px -560px; }
-#marie { background-position: -600px -560px; }
-#bill { background-position: -800px -560px; }
-#eric { background-position: -1000px -560px; }
-#carl { background-position: -1200px -560px; }
-#anna { background-position: -1400px -560px; }
+#frans { background-position: 0 50%; }
+#richard { background-position: 14.286% 50%; }
+#susan { background-position: 28.571%  50%; }
+#max { background-position: 42.857%  50%; }
+#herman { background-position: 57.143%  50%; }
+#david { background-position: 71.428%  50%; }
+#bernard { background-position: 85.714%  50%; }
+#alex { background-position: 100%  50%; }
+
+#thomas { background-position: 0 100%; }
+#robert { background-position: 14.286% 100%; }
+#peter { background-position: 28.571% 100%; }
+#marie { background-position: 42.857% 100%; }
+#bill { background-position: 57.143% 100%; }
+#eric { background-position: 71.428% 100%; }
+#carl { background-position: 85.714% 100%; }
+#anna { background-position: 100% 100%; }
 
 #input {
 	display: block;
